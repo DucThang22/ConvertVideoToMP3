@@ -11,6 +11,8 @@ import dagger.hilt.android.AndroidEntryPoint
 abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         SystemUtil.setLocale(this)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
     }
 

@@ -1,4 +1,6 @@
 package com.voiceeffects.supereffect.convertvideotomp3.setting
 
-class SettingViewModel {
+import com.voiceeffects.supereffect.convertvideotomp3.base.BaseViewModel
+
+class SettingViewModel: BaseViewModel() {
 }
