@@ -47,6 +47,7 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("org.chromium.net:cronet-embedded:113.5672.61")
+    implementation("androidx.room:room-common:2.6.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -55,5 +56,13 @@ dependencies {
     implementation ("com.google.dagger:hilt-android:2.44")
     implementation ("com.google.firebase:firebase-config-ktx:21.4.1")
     kapt ("com.google.dagger:hilt-compiler:2.44")
+
+    // room
+    implementation ("androidx.room:room-common:2.5.2")
+    implementation ("androidx.room:room-ktx:2.5.2")
+    implementation ("androidx.room:room-runtime:2.5.2")
+    kapt ("androidx.room:room-compiler:2.5.2")
+    androidTestImplementation ("androidx.room:room-testing:2.5.2")
+
 
 }
