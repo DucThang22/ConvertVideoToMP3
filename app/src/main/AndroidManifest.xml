@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
@@ -40,6 +41,11 @@
         <activity
             android:name=".setting.SettingAct"
             android:theme="@style/AppThemeSetting"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".permission.PermissionAct"
+            android:theme="@style/AppThemeMain"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>
