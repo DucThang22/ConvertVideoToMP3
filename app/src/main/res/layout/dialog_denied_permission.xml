@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@drawable/custom_background_dialog_denied"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/app_font_medium"
+                android:gravity="center_horizontal"
+                android:text="Enable Permission"
+                android:textColor="#212121"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/app_font_regular"
+                android:gravity="center_horizontal"
+                android:text="Cho phép tôi lấy thông tin nhé!"
+                android:textColor="#494f58"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+
+            <TextView
+                android:id="@+id/btn_ok"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/background_go_to_setting"
+                android:fontFamily="@font/app_font_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:text="Go to setting"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toRightOf="@id/tv_cancel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_content" />
+
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_cancel"
+                android:fontFamily="@font/app_font_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingVertical="6dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Cancel"
+                android:textColor="#5165F1"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/btn_ok"
+                app:layout_constraintTop_toBottomOf="@id/txt_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+
+</layout>

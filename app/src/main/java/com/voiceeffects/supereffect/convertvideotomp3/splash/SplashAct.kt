@@ -7,6 +7,8 @@ import com.voiceeffects.supereffect.convertvideotomp3.R
 import com.voiceeffects.supereffect.convertvideotomp3.base.BaseBindingActivity
 import com.voiceeffects.supereffect.convertvideotomp3.databinding.SplashActBinding
 import com.voiceeffects.supereffect.convertvideotomp3.main.MainAct
+import com.voiceeffects.supereffect.convertvideotomp3.permission.PermissionAct
+import com.voiceeffects.supereffect.convertvideotomp3.utils.SharePrefUtils
 import com.voiceeffects.supereffect.convertvideotomp3.utils.SystemUtil
 
 @SuppressLint("CustomSplashScreen")
@@ -33,7 +35,12 @@ class SplashAct : BaseBindingActivity<SplashActBinding, SplashViewModel>(){
     }
 
     private fun openMainActivity() {
-        startActivity(Intent(this@SplashAct, MainAct::class.java))
+        if (SharePrefUtils.showPermission(this)) {
+            startActivity(Intent(this, PermissionAct::class.java))
+        } else if (!SharePrefUtils.showPermission(this)) {
+            startActivity(Intent(this, MainAct::class.java))
+        }
+        finish()
     }
 
 }

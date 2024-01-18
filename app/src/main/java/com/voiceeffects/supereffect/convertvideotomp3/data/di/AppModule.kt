@@ -6,6 +6,8 @@ import android.preference.PreferenceManager
 import androidx.room.Room
 import com.voiceeffects.supereffect.convertvideotomp3.common.Constants
 import com.voiceeffects.supereffect.convertvideotomp3.data.AppDatabase
+import com.voiceeffects.supereffect.convertvideotomp3.data.database.dao.AudioDao
+import com.voiceeffects.supereffect.convertvideotomp3.data.database.dao.VideoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

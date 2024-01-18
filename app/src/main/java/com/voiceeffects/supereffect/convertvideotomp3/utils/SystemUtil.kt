@@ -1,7 +1,11 @@
 package com.voiceeffects.supereffect.convertvideotomp3.utils
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.os.Build
+import androidx.core.content.ContextCompat
 import java.util.Locale
 
 object SystemUtil {
@@ -62,4 +66,16 @@ object SystemUtil {
         languages.add("hi")
         return languages
     }
+
+    fun hasStoragePermission(context: Context) =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+            ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.READ_MEDIA_IMAGES
+            ) == PackageManager.PERMISSION_GRANTED
+        else
+            ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ) == PackageManager.PERMISSION_GRANTED
 }
