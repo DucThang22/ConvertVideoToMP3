@@ -40,6 +40,8 @@ data class AudioEntity(
     @ColumnInfo(name = START) var start: Long,
 
     @ColumnInfo(name = END) var end: Long,
+
+    @ColumnInfo(name = IS_PLAY) var isPlay: Boolean
 ) {
     companion object {
         const val TABLE_NAME = "audio_table"
@@ -61,5 +63,6 @@ data class AudioEntity(
         const val TITLE = "title"
         const val ARTIST = "artist"
         const val ALBUM = "album"
+        const val IS_PLAY = "isPlay"
     }
 }

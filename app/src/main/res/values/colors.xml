@@ -10,4 +10,6 @@
     <color name="color_F04040">#F04040</color>
     <color name="color_E84646">#E84646</color>
     <color name="color_D3D0D0">#D3D0D0</color>
+    <color name="regular_price_color">#cbcbcb</color>
+    <color name="white_80pc">#CCFFFFFF</color>
 </resources>

@@ -79,7 +79,7 @@ class PermissionAct : BaseBindingActivity<PermissionActBinding, PermissionViewMo
     override fun setupView(savedInstanceState: Bundle?) {
         isGrantMedia = isGrantAudio()
         if (Build.VERSION.SDK_INT < 33) {
-            binding.tvMediaPermission.gone()
+//            binding.tvMediaPermission.gone()
         }
         if (isGrantMedia) {
             Intent(this, MainAct::class.java).apply {
