@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ConvertVideoToMP3</string>
+    <string name="string_all">All</string>
+    <string name="string_album">Album</string>
 </resources>

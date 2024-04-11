@@ -1,15 +1,23 @@
 package com.voiceeffects.supereffect.convertvideotomp3.data.model
 
 data class AudioModel(
+    var id: Int,
     var nameFile: String,
     var size: Long,
     var date: Long,
-    var path: String,
+    var format: String,
+    var pathSave: String,
+    var pathPlay: String,
     var durationAudio: Long,
     var bitrate: Int,
+    var typeBitrate:String,
+    var frequency: Int,
+    var title: String,
     var artist: String,
     var album: String,
-    var genre: String
+    var genre: String,
+    var start: Long,
+    var end: Long
 ) {
     companion object {
         const val MODE_CBR = "CBR"

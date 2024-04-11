@@ -5,7 +5,10 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.os.Build
+import android.os.Environment
 import androidx.core.content.ContextCompat
+import com.voiceeffects.supereffect.convertvideotomp3.common.Constants
+import java.io.File
 import java.util.Locale
 
 object SystemUtil {
@@ -78,4 +81,28 @@ object SystemUtil {
                 context,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
             ) == PackageManager.PERMISSION_GRANTED
+
+
+    fun getAllNameInFolder(newName: String, type: String): String {
+
+        var finalName = newName
+        var index = 1
+
+        val yourDir = File(
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).path + "/${Constants.FOLDER_NAME}"
+        )
+        val newFile = File("${yourDir}/${newName}.${type}")
+        if (newFile.exists()) {
+            while (true) {
+                val newFile = File("${yourDir}/${newName}(${index}).${type}")
+                if (newFile.exists()) {
+                    index++
+                } else {
+                    return "${newName}(${index})"
+                }
+            }
+        } else {
+            return finalName
+        }
+    }
 }
