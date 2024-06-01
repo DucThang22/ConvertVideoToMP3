@@ -1,10 +1,7 @@
 package com.voiceeffects.supereffect.convertvideotomp3.file.all
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.core.view.isVisible
 import com.voiceeffects.supereffect.convertvideotomp3.R
 import com.voiceeffects.supereffect.convertvideotomp3.base.BaseBindingFragment
 import com.voiceeffects.supereffect.convertvideotomp3.databinding.AllMediaFrBinding

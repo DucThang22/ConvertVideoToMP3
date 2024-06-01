@@ -1,10 +1,13 @@
 package com.voiceeffects.supereffect.convertvideotomp3.main
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.core.view.forEach
 import com.voiceeffects.supereffect.convertvideotomp3.R
 import com.voiceeffects.supereffect.convertvideotomp3.base.BaseBindingActivity
+import com.voiceeffects.supereffect.convertvideotomp3.custom_view.CustomTooltipManager
 import com.voiceeffects.supereffect.convertvideotomp3.databinding.MainActBinding
 import com.voiceeffects.supereffect.convertvideotomp3.main.adapter.FragmentTabLayoutAdapter
 import com.voiceeffects.supereffect.convertvideotomp3.setting.SettingAct
@@ -25,6 +28,27 @@ class MainAct : BaseBindingActivity<MainActBinding, MainViewModel>() {
     override fun setupView(savedInstanceState: Bundle?) {
         initAction()
         initViewPager()
+        initTooltip()
+    }
+
+    private fun initTooltip() {
+//        CustomTooltipManager.toggleTooltipFromView(
+//            root,
+//            root.context.getString(R.string.fractional_share_tool_tip_me_tab),
+//            CustomTooltipManager.TooltipBehaviorModel(
+//                anim = true,
+//                dismissOutsideWithAnim = false,
+//                backgroundColor = ContextCompat.getColor(
+//                    root.context,
+//                    R.color.colorFractionalSharesTooltip
+//                ),
+//                indicatorColor = ContextCompat.getColor(
+//                    root.context,
+//                    R.color.colorFractionalSharesTooltip
+//                ),
+//                textColor = Color.WHITE
+//            )
+//        )
     }
 
     private fun initAction() {
