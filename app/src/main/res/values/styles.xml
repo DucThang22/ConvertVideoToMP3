@@ -46,4 +46,19 @@
         <item name="lineSpacing">24dp</item>
     </style>
 
+    <style name="TabLayoutTextAppearance">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="CustomFontSizeTabLayout">
+        <item name="tabPaddingStart">@dimen/dp16</item>
+        <item name="tabPaddingEnd">@dimen/dp16</item>
+        <item name="tabMinWidth">0dp</item>
+        <item name="tabSelectedTextColor">@color/color_F04040</item>
+        <item name="tabTextColor">@color/black</item>
+        <item name="tabMode">scrollable</item>
+    </style>
+
 </resources>

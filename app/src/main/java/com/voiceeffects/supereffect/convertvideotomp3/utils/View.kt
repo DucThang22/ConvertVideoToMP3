@@ -26,7 +26,6 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
-import androidx.annotation.ColorRes
 import androidx.annotation.Px
 import androidx.core.content.ContextCompat
 import androidx.core.view.forEach
@@ -346,7 +345,6 @@ private fun setTextViewDrawableColor(textView: TextView, color: Int) {
     }
 }
 
-//Start TuanVV - PP2-FUN-45 - 26/06/2023
 @SuppressLint("ClickableViewAccessibility")
 fun View.clickLinkOpacity(onClick: View.OnClickListener?) {
     this.setOnTouchListener { view, motionEvent ->
