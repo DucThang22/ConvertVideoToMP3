@@ -1,0 +1,35 @@
+package com.voiceeffects.supereffect.convertvideotomp3.main.chart
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.voiceeffects.supereffect.convertvideotomp3.R
+
+class LegendAdapter(private val data: List<LegendItem>) :
+    RecyclerView.Adapter<LegendAdapter.LegendViewHolder>() {
+
+    data class LegendItem(val color: Int, val name: String, val percentage: Float)
+
+    class LegendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val colorBox: View = itemView.findViewById(R.id.colorBox)
+        val itemName: TextView = itemView.findViewById(R.id.itemName)
+        val itemPercentage: TextView = itemView.findViewById(R.id.itemPercentage)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LegendViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_legend, parent, false)
+        return LegendViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: LegendViewHolder, position: Int) {
+        val item = data[position]
+        holder.colorBox.setBackgroundColor(item.color)
+        holder.itemName.text = item.name
+        holder.itemPercentage.text = "${item.percentage}%"
+    }
+
+    override fun getItemCount(): Int = data.size
+}

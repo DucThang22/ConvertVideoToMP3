@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import com.voiceeffects.supereffect.convertvideotomp3.R
+import com.voiceeffects.supereffect.convertvideotomp3.common.Constants.KEY_THEME_APP
 
 
 inline fun <FRAGMENT : Fragment> FRAGMENT.putArgs(
@@ -82,3 +85,47 @@ fun View.invisible() = if (this.isVisible) this.visibility = View.INVISIBLE else
 fun Activity.getDrawableWithId(id: Int) =
     ResourcesCompat.getDrawable(this.resources, id, null)
 
+
+//var theme: ThemeApp
+//    set(value) {
+//        SharePrefUtils.addTheme(context, value.name)
+//    }
+//    get() {
+//        val key = pref.getValue(KEY_THEME_APP, STRING_EMPTY)
+//        if (key != STRING_EMPTY) {
+//            return ThemeApp.getThemeApp(key)
+//        } else {
+//            val nightModeFlags = context.resources.configuration.uiMode and
+//                    Configuration.UI_MODE_NIGHT_MASK
+//            val localTheme = when (nightModeFlags) {
+//                Configuration.UI_MODE_NIGHT_YES -> {
+//                    ThemeApp.Dark
+//                }
+//
+//                else -> {
+//                    ThemeApp.Light
+//                }
+//            }
+//            theme = localTheme
+//            return localTheme
+//        }
+//    }
+
+enum class ThemeApp(val value: Int) {
+    Dark(2), Light(1);
+
+    companion object {
+        fun getThemeApp(theme: String?): ThemeApp {
+            if (theme == null) return Dark
+            return values().find { it.name == theme } ?: Dark
+        }
+
+        fun getThemeName(context: Context, themeApp: ThemeApp): String {
+            // KhuongND - RMD-501 - 14/08/2023
+            return when (themeApp) {
+                Dark -> context.getString(R.string.string_theme_dark)
+                else -> context.getString(R.string.string_theme_light)
+            }
+        }
+    }
+}

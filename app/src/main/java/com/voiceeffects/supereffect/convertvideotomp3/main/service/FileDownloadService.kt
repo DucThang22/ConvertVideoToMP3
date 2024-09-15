@@ -9,6 +9,7 @@
 //import android.os.FileUtils
 //import android.os.IBinder
 //import androidx.lifecycle.MutableLiveData
+//import com.voiceeffects.supereffect.convertvideotomp3.data.model.FileDownloadModel
 //import kotlinx.coroutines.CoroutineScope
 //import kotlinx.coroutines.Dispatchers
 //import kotlinx.coroutines.Job
@@ -58,7 +59,7 @@
 //    }
 //
 //    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-//        val fileDownloadModel = intent?.parcelable<FileDownloadModel>(KEY_FILE_DOWNLOAD_MODEL)
+//        val fileDownloadModel = intent?.getParcelableExtra<FileDownloadModel>(KEY_FILE_DOWNLOAD_MODEL)
 //        val isCancel = intent?.getBooleanExtra(KEY_FILE_IS_CANCEL , false) ?: false
 //        if (isCancel) {
 //            map[fileDownloadModel]?.disconnect()
@@ -170,8 +171,8 @@
 //        const val KEY_FILE_DOWNLOAD_MODEL = "key_file_download_model"
 //        const val KEY_FILE_IS_CANCEL = "key_is_cancel"
 //        val progressChangeLiveData = MutableLiveData<Triple<Float, String?, String?>>()
-//        val downloadSuccessLiveData = SingleLiveEvent<Pair<String?, String?>>()
-//        val downloadFailLiveData = SingleLiveEvent<Pair<String?, String?>>()
+//        val downloadSuccessLiveData = MutableLiveData<Pair<String?, String?>>()
+//        val downloadFailLiveData = MutableLiveData<Pair<String?, String?>>()
 //        val finishDownload = MutableLiveData<Pair<String?, String?>>()
 //    }
 //}
