@@ -1,16 +1,18 @@
 package com.voiceeffects.supereffect.convertvideotomp3.main
 
-import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
+import android.view.WindowInsetsController
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.forEach
 import com.voiceeffects.supereffect.convertvideotomp3.R
 import com.voiceeffects.supereffect.convertvideotomp3.base.BaseBindingActivity
-import com.voiceeffects.supereffect.convertvideotomp3.custom_view.CustomTooltipManager
 import com.voiceeffects.supereffect.convertvideotomp3.databinding.MainActBinding
 import com.voiceeffects.supereffect.convertvideotomp3.main.adapter.FragmentTabLayoutAdapter
-import com.voiceeffects.supereffect.convertvideotomp3.setting.SettingAct
+import com.voiceeffects.supereffect.convertvideotomp3.main.chart.ChartAct
+import com.voiceeffects.supereffect.convertvideotomp3.main.table.TestGridLayout
+import com.voiceeffects.supereffect.convertvideotomp3.utils.ThemeApp
 
 class MainAct : BaseBindingActivity<MainActBinding, MainViewModel>() {
 
@@ -53,7 +55,7 @@ class MainAct : BaseBindingActivity<MainActBinding, MainViewModel>() {
 
     private fun initAction() {
         binding.btnSetting.setOnClickListener {
-            startActivity(SettingAct.getIntent(this))
+            startActivity(ChartAct.getIntent(this))
         }
     }
 
@@ -78,6 +80,47 @@ class MainAct : BaseBindingActivity<MainActBinding, MainViewModel>() {
 
     override fun setupData() {
 
+    }
+
+    fun changeThemeApp(theme: String) {
+        if (theme == ThemeApp.Dark.name) {
+            turnOnNightTheme()
+//            settingGeneralApp.theme = ThemeApp.Dark
+        } else {
+            turnOffNightTheme()
+//            settingGeneralApp.theme = ThemeApp.Light
+        }
+    }
+
+
+    private fun turnOffNightTheme() {
+        // is light mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window?.decorView?.let {
+                it.windowInsetsController?.setSystemBarsAppearance(
+                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                )
+            }
+        } else {
+            window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        }
+    }
+
+    private fun turnOnNightTheme() {
+        // is night mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window?.decorView?.let {
+                it.windowInsetsController?.setSystemBarsAppearance(
+                    0,
+                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                )
+            }
+        } else {
+            window?.decorView?.systemUiVisibility = 0
+        }
     }
 
 }

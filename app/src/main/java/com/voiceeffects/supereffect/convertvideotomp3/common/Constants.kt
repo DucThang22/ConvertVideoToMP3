@@ -8,4 +8,5 @@ object Constants {
     const val AUDIO_DISPLAY = 2
     const val VIDEO_DISPLAY_SELECT = 3
     const val AUDIO_DISPLAY_SELECT = 4
+    const val KEY_THEME_APP = "key_theme_app"
 }

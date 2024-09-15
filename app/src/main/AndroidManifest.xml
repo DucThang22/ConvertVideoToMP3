@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -50,6 +51,16 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".file.FileManagementAct"
+            android:theme="@style/AppThemeMain"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.table.TestGridLayout"
+            android:theme="@style/AppThemeMain"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.chart.ChartAct"
             android:theme="@style/AppThemeMain"
             android:exported="true"
             android:screenOrientation="portrait" />

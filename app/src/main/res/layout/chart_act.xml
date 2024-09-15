@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp">
+
+            <com.voiceeffects.supereffect.convertvideotomp3.main.chart.DoughnutChartView
+                android:id="@+id/doughnutChart"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/legendRecyclerView"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/doughnutChart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/seaRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                app:layout_constraintTop_toBottomOf="@+id/legendRecyclerView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@+id/seaRecyclerView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30">
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/dp49"
+                    app:layout_constraintStart_toEndOf="@+id/line1"/>
+
+                <View
+                    android:id="@+id/line3"
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/dp49"
+                    app:layout_constraintStart_toEndOf="@+id/line2"/>
+
+                <View
+                    android:id="@+id/line4"
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/dp49"
+                    app:layout_constraintStart_toEndOf="@+id/line3"/>
+
+                <View
+                    android:id="@+id/line5"
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/dp48"
+                    app:layout_constraintStart_toEndOf="@+id/line4"/>
+
+                <com.voiceeffects.supereffect.convertvideotomp3.main.chart.StatusBarView
+                    android:id="@+id/statusBarView"
+                    android:layout_width="200dp"
+                    android:layout_height="22dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
